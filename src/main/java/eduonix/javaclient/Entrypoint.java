@@ -23,9 +23,9 @@ public class Entrypoint {
 
         // Connect Sync
         cluster = CouchbaseCluster.create();
-        bucket = cluster.openBucket("beer-sample");
+        bucket = cluster.openBucket("eduonix-test");
 
-        JsonDocument contentFound = bucket.get("beer-sample");
+        JsonDocument contentFound = bucket.get("eduonix-test");
 
         if (contentFound == null) {
 
@@ -34,7 +34,7 @@ public class Entrypoint {
             content.put("name", "test data");
             content.put("id", "test id");
 
-            JsonDocument doc =  JsonDocument.create("beer-sample", content);
+            JsonDocument doc =  JsonDocument.create("eduonix-test", content);
             bucket.insert(doc);
 
         }
