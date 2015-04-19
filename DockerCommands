@@ -6,3 +6,18 @@ run server
 docker run -i -t -d -e CB_REST_USER=user -e CB_REST_PASSWORD=password --name=COUCHBASE -p 11210:11210 -p 8091:7081 -p 8092:8092 couchbase:3.0
 
 Credentials: user: Administrator pass: password
+
+
+
+docker build -t="eduonix/couchbase_sync:1.0.0" .
+
+docker run -t -i  eduonix/couchbase_sync:1.0.0
+
+
+http://tleyden.github.io/blog/2014/12/15/running-a-sync-gateway-cluster-under-coreos-on-aws/
+
+docker build -t="eduonix/couchbase_sync:1.0.0" .
+
+
+
+docker run  -t -i  eduonix/couchbase_sync:1.0.0 -v  /home/ubu/EduonixCouchbase/config.json -d aminjam/couchbase-sync-gateway /config.json
